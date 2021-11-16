@@ -12,7 +12,7 @@ export default () => {
         params:{
           limit: 50,
           term: searchTerm,
-          location: "berlin" 
+          location: "milano" 
         }
       })
       setResults(response.data.businesses)   // JSON
@@ -23,7 +23,7 @@ export default () => {
   
   // Call searchApi wehn component is first rendered
   useEffect(()=> {
-    searchApi("pasta")
+    searchApi("napoli")
   },[])
 
   return [searchApi, results, errorMessage]

@@ -16,7 +16,7 @@ const filterResultByPrice = (price) =>{
 }
 
   return (
-    <View>
+    <View style={{ flex:1 }}>
       <SearchBar 
         term={term} 
         onTermChange={setTerm}
@@ -24,7 +24,7 @@ const filterResultByPrice = (price) =>{
       />
       {errorMessage ? <Text>{errorMessage}</Text>: null}
 
-      <Text>We have found {results.length} results</Text>
+      <Text style={styles.textSytle}>We have found {results.length} results</Text>
       <ResultsList results={filterResultByPrice("$")} title="Cost Effective" /> 
       <ResultsList results={filterResultByPrice("$$")} title="Bit Pricier"  /> 
       <ResultsList results={filterResultByPrice("$$$")} title="Bit Spender" /> 
@@ -32,6 +32,10 @@ const filterResultByPrice = (price) =>{
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  textSytle:{
+    marginLeft: 15
+  }
+})
 
 export default SearchScreen

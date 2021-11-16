@@ -3,24 +3,28 @@ import { View, Image, Text, StyleSheet } from "react-native"
 
 const ResultsDetails = ({result}) =>{
   return (
-    <View>
+    <View style={styles.container}>
       <Image style={styles.imageStyle} source={{ uri: result.image_url }}/>
-      <Text>
+      <Text style={styles.nameStyle}>
         {result.name}
       </Text>
+      <Text>{result.rating} Stars, { result.review_count}</Text>
     </View>
   )
 }
 
 const styles= StyleSheet.create({
+  container:{
+    marginLeft: 15
+  },
   imageStyle:{
     width: 250,
     height: 120,
-    borderRadius: 4
+    borderRadius: 4,
+    marginBottom: 5
   },
   nameStyle:{
-    fontWeight: "bold",
-    fontSize: 16
+    fontWeight: "bold"
   }
 })
 
