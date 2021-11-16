@@ -16,7 +16,7 @@ const filterResultByPrice = (price) =>{
 }
 
   return (
-    <View style={{ flex:1 }}>
+    <>
       <SearchBar 
         term={term} 
         onTermChange={setTerm}
@@ -24,11 +24,10 @@ const filterResultByPrice = (price) =>{
       />
       {errorMessage ? <Text>{errorMessage}</Text>: null}
 
-      <Text style={styles.textSytle}>We have found {results.length} results</Text>
       <ResultsList results={filterResultByPrice("$")} title="Cost Effective" /> 
       <ResultsList results={filterResultByPrice("$$")} title="Bit Pricier"  /> 
       <ResultsList results={filterResultByPrice("$$$")} title="Bit Spender" /> 
-    </View>
+    </>
   )
 }
 
